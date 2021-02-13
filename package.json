@@ -24,6 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
+    "lodash": ">=0.1.0",
     "react": "^16.0.0"
   },
   "devDependencies": {
@@ -49,5 +50,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "d3": "^3.5.17"
+  }
 }
