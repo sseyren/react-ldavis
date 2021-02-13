@@ -11,15 +11,25 @@ const options = LDAvisDataList.map((_, i) => (
 
 const App = () => {
   const [currentData, setCurrentData] = useState(0);
+  const [modHis, setModHis] = useState(false);
 
   return (
     <div>
-      <label>Data: </label>
+      <label>data: </label>
       <select onChange={event => setCurrentData(event.target.value)}>
         {options}
       </select>
+
+      <label>modifyHistory: </label>
+      <input
+        type="checkbox"
+        checked={modHis}
+        onChange={event => setModHis(event.target.checked)}
+      />
+
       <LDAvis
         data={LDAvisDataList[currentData]}
+        modifyHistory={modHis}
         style={{ textAlign: "center" }}
       />
     </div>

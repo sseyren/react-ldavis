@@ -4,7 +4,7 @@
 
 import * as d3 from "d3"
 
-export default function LDAvisLegacy(to_select, json_file) {
+export default function LDAvisLegacy(to_select, json_file, mod_history=false) {
 
     // This section sets up the logic for event handling
     var current_clicked = {
@@ -1373,10 +1373,12 @@ export default function LDAvisLegacy(to_select, json_file) {
         }
 
         function state_save(replace) {
-            if (replace)
-                history.replaceState(vis_state, "Query", state_url());
-            else
-                history.pushState(vis_state, "Query", state_url());
+            if (mod_history){
+                if (replace)
+                    history.replaceState(vis_state, "Query", state_url());
+                else
+                    history.pushState(vis_state, "Query", state_url());
+            }
         }
 
         function state_reset() {

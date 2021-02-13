@@ -5,6 +5,10 @@ import LDAvisLegacy from './ldavis'
 import styles from './styles.module.css'
 
 export class LDAvis extends React.Component {
+  static defaultProps = {
+    modifyHistory: false,
+  }
+
   constructor(props) {
     super(props)
 
@@ -12,7 +16,12 @@ export class LDAvis extends React.Component {
     this.vis = React.createRef()
   }
 
-  generateVis = () => new LDAvisLegacy("#" + this.id, this.props.data)
+  generateVis = () => new LDAvisLegacy(
+    "#" + this.id,
+    this.props.data,
+    this.props.modifyHistory,
+  )
+
   clearVis = () => { this.vis.current.innerHTML = "" }
 
   componentDidMount = () => this.generateVis()
