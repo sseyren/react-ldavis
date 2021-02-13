@@ -13,7 +13,7 @@ export class LDAvis extends React.Component {
   }
 
   generateVis = () => new LDAvisLegacy("#" + this.id, this.props.data)
-  clearVis = () => {this.vis.current.innerHTML = ""}
+  clearVis = () => { this.vis.current.innerHTML = "" }
 
   componentDidMount = () => this.generateVis()
 
@@ -25,6 +25,12 @@ export class LDAvis extends React.Component {
   }
 
   render = () => (
-    <div className={styles.LDAvis} ref={this.vis} id={this.id}></div>
+    <div
+      ref={this.vis}
+      id={this.id}
+      className={styles.LDAvis}
+      style={this.props.style}
+    >
+    </div>
   )
 }

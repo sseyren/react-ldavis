@@ -611,12 +611,11 @@ export default function LDAvisLegacy(to_select, json_file) {
             // create container div for topic and lambda input:
 	    var inputDiv = document.createElement("div");
 	    inputDiv.setAttribute("id", "top");
-	    inputDiv.setAttribute("style", "width: 1210px"); // to match the width of the main svg element
 	    document.getElementById(visID).appendChild(inputDiv);
 
 	    // topic input container:
 	    var topicDiv = document.createElement("div");
-	    topicDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; width: " + mdswidth + "px; height: 50px; float: left");
+	    topicDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; width: "+mdswidth+"px; height: 50px; vertical-align:top;");
 	    inputDiv.appendChild(topicDiv);
 
             var topicLabel = document.createElement("label");
@@ -637,19 +636,19 @@ export default function LDAvisLegacy(to_select, json_file) {
 
  	    var previous = document.createElement("button");
 	    previous.setAttribute("id", topicDown);
-	    previous.setAttribute("style", "margin-left: 5px");
+	    previous.setAttribute("style", "margin-left: 5px; padding: 0");
 	    previous.innerHTML = "Previous Topic";
             topicDiv.appendChild(previous);
 
 	    var next = document.createElement("button");
 	    next.setAttribute("id", topicUp);
-	    next.setAttribute("style", "margin-left: 5px");
+	    next.setAttribute("style", "margin-left: 5px; padding: 0");
 	    next.innerHTML = "Next Topic";
             topicDiv.appendChild(next);
             
 	    var clear = document.createElement("button");
 	    clear.setAttribute("id", topicClear);
-	    clear.setAttribute("style", "margin-left: 5px");
+	    clear.setAttribute("style", "margin-left: 5px; padding: 0");
 	    clear.innerHTML = "Clear Topic";
             topicDiv.appendChild(clear);
 
@@ -658,7 +657,7 @@ export default function LDAvisLegacy(to_select, json_file) {
     	    var lambdaDivWidth = barwidth;
     	    var lambdaDiv = document.createElement("div");
     	    lambdaDiv.setAttribute("id", "lambdaInput");
-    	    lambdaDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; height: 50px; width: " + lambdaDivWidth + "px; float: right; margin-right: 30px");
+    	    lambdaDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; height: 50px; width: "+lambdaDivWidth+"px; vertical-align:top; margin-left: "+termwidth+"px");
     	    inputDiv.appendChild(lambdaDiv);
 
     	    var lambdaZero = document.createElement("div");
