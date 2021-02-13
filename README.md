@@ -15,7 +15,7 @@ npm install react-ldavis
 ```jsx
 import React, { Component } from 'react'
 
-import LDAvis from 'react-ldavis'
+import { LDAvis } from 'react-ldavis'
 import 'react-ldavis/dist/index.css'
 
 class Example extends Component {
