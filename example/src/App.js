@@ -1,10 +1,14 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-ldavis'
+import { LDAvis } from 'react-ldavis'
 import 'react-ldavis/dist/index.css'
 
+import LDAvisDataList from './data'
+
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <LDAvis
+    data={LDAvisDataList[0]}
+  />
 }
 
 export default App

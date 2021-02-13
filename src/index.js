@@ -1,6 +1,30 @@
 import React from 'react'
+import { isEqual, uniqueId } from 'lodash'
+
+import LDAvisLegacy from './ldavis'
 import styles from './styles.module.css'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export class LDAvis extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.id = uniqueId("LDAvis-")
+    this.vis = React.createRef()
+  }
+
+  generateVis = () => new LDAvisLegacy("#" + this.id, this.props.data)
+  clearVis = () => {this.vis.current.innerHTML = ""}
+
+  componentDidMount = () => this.generateVis()
+
+  componentDidUpdate(prevProps) {
+    if (!isEqual(prevProps, this.props)) {
+      this.clearVis()
+      this.generateVis()
+    }
+  }
+
+  render = () => (
+    <div className={styles.LDAvis} ref={this.vis} id={this.id}></div>
+  )
 }
