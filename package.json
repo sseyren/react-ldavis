@@ -1,7 +1,7 @@
 {
   "name": "react-ldavis",
   "version": "1.0.0",
-  "description": "LDAvis React Component",
+  "description": "React Component for LDAvis",
   "author": "thesseyren",
   "license": "MIT",
   "repository": "thesseyren/react-ldavis",
